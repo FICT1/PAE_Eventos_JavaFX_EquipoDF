@@ -5,4 +5,6 @@ module ni.edu.uam.pae_eventos_javafx_equipodf {
 
     opens ni.edu.uam.pae_eventos_javafx_equipodf to javafx.fxml;
     exports ni.edu.uam.pae_eventos_javafx_equipodf;
+    exports ni.edu.uam.pae_eventos_javafx_equipodf.controller;
+    opens ni.edu.uam.pae_eventos_javafx_equipodf.controller to javafx.fxml;
 }

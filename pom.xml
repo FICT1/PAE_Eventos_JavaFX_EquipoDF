@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                ni.edu.uam.pae_eventos_javafx_equipodf/ni.edu.uam.pae_eventos_javafx_equipodf.HelloApplication
+                                ni.edu.uam.pae_eventos_javafx_equipodf/ni.edu.uam.pae_eventos_javafx_equipodf.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
