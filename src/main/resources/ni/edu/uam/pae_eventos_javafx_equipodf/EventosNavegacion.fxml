@@ -11,12 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-         prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE"
-         xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
-         fx:controller="ni.edu.uam.pae_eventos_javafx_equipodf.controller.MainController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.pae_eventos_javafx_equipodf.controller.MainController">
     <tabs>
-    <Tab text="Inventario Pulperia">
+    <Tab fx:id="tabPulperia" text="Inventario Pulperia">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -31,7 +28,7 @@
             </ContextMenu>
          </contextMenu>
     </Tab>
-    <Tab text="Recepción Café">
+    <Tab fx:id="tabCafe" text="Recepción Café">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -55,7 +52,7 @@
             </ContextMenu>
          </contextMenu>
     </Tab>
-      <Tab text="Tienda Artesanas">
+      <Tab fx:id="tabArtesanias" text="Tienda Artesanas">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
