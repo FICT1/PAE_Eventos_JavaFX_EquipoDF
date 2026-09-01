@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ni.edu.uam.pae_eventos_javafx_equipodf.controller.ArtesaniasController">
+    <children>
+        <!-- MenuBar de navegación -->
+        <MenuBar>
+            <menus>
+                <Menu text="Catálogo">
+                    <items>
+                        <MenuItem text="Nuevo producto" onAction="#accionNuevo"/>
+                        <MenuItem text="Guardar cambios" onAction="#accionGuardar"/>
+                    </items>
+                </Menu>
+                <Menu text="Ayuda">
+                    <items>
+                        <MenuItem text="Acerca de" onAction="#accionAyuda"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
 
-</AnchorPane>
+        <!-- ToolBar de acceso rápido -->
+        <ToolBar>
+            <items>
+                <Button text="➕ Nuevo" onAction="#accionNuevo"/>
+                <Button text="💾 Guardar" onAction="#accionGuardar"/>
+                <Button text="🔍 Cargar Demostración" onAction="#cargarDatosEjemplo"/>
+            </items>
+        </ToolBar>
+
+        <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="5.0"/>
+            </padding>
+            <children>
+                <Label fx:id="lblNotificacion" style="-fx-font-weight: bold;" text="Acción: Ninguna"/>
+
+                <!-- TableView con renderizado de imagen -->
+                <TableView fx:id="tablaArtesanias" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colImagen" prefWidth="80.0" text="Vista"/>
+                        <TableColumn fx:id="colCodigo" prefWidth="100.0" text="Código"/>
+                        <TableColumn fx:id="colNombre" prefWidth="200.0" text="Artesanía"/>
+                        <TableColumn fx:id="colPrecio" prefWidth="120.0" text="Precio (C$)"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</VBox>
