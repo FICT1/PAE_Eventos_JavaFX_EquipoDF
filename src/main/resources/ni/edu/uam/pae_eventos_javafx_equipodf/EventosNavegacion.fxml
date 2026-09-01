@@ -13,7 +13,6 @@
             </content>
         </Tab>
 
-        // Reto 2: inclui aqui daniella tu CafeView.fxml
         <Tab fx:id="tabCafe" text="Recepción Café">
             <content>
             </content>
@@ -21,6 +20,7 @@
 
         <Tab fx:id="tabArtesanias" text="Tienda Artesanas">
             <content>
+                <fx:include source="ArtesaniasView.fxml" />
             </content>
         </Tab>
     </tabs>
