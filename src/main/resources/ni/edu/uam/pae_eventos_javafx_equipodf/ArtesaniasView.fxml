@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" styleClass="modulo-container" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.pae_eventos_javafx_equipodf.controller.ArtesaniasController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu text="Catálogo">
+                    <items>
+                        <MenuItem onAction="#accionNuevo" text="Nuevo Producto" />
+                        <MenuItem onAction="#accionCargarDemostración" text="Cargar Demostración" />
+                    </items>
+                </Menu>
+                <Menu text="Ventas">
+                    <items>
+                        <MenuItem onAction="#accionBuscar" text="Buscar Producto" />
+                    </items>
+                </Menu>
+                <Menu text="Ayuda">
+                    <items>
+                        <MenuItem onAction="#accionAcercaDe" text="Acerca de" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ToolBar>
+            <items>
+                <Button onAction="#accionNuevo" styleClass="btn-primary" text="+ Nuevo" />
+                <Button onAction="#accionGuardar" styleClass="btn-secondary" text="Guardar" />
+                <Button onAction="#accionCargarDemostración" styleClass="btn-secondary" text="Cargar Demostración" />
+                <Label styleClass="modulo-subtitulo" text="&lt;- (Muestra los productos ya establecidos)" />
+            </items>
+        </ToolBar>
+        <VBox spacing="12.0" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="16.0" left="16.0" right="16.0" top="14.0" />
+            </padding>
+            <children>
+                <Label fx:id="lblEstado" styleClass="status-badge" text="Acción: Esperando interacción..." />
+                <TableView fx:id="tablaArtesanias" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colImagen" prefWidth="80.0" text="Vista" />
+                        <TableColumn fx:id="colCodigo" prefWidth="100.0" text="Código" />
+                        <TableColumn fx:id="colNombre" prefWidth="220.0" text="Artesanía" />
+                        <TableColumn fx:id="colPrecio" prefWidth="120.0" text="Precio (C$)" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</VBox>

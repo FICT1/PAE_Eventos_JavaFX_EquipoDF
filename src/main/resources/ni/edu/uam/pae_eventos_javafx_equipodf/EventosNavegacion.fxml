@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+         prefHeight="500.0" prefWidth="650.0" tabClosingPolicy="UNAVAILABLE"
+         xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+    <tabs>
+        <Tab fx:id="tabPulperia" text="Inventario Pulperia">
+            <content>
+                <fx:include source="InventarioView.fxml" />
+            </content>
+        </Tab>
+
+        <Tab fx:id="tabCafe" text="Recepción Café">
+            <content>
+                <fx:include source="CafeView.fxml" />
+            </content>
+        </Tab>
+
+        <Tab fx:id="tabArtesanias" text="Tienda Artesanas">
+            <content>
+                <fx:include source="ArtesaniasView.fxml" />
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
