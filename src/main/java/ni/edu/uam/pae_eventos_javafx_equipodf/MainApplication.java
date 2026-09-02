@@ -10,9 +10,13 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("EventosNavegacion.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+        Scene scene = new Scene(fxmlLoader.load(), 850, 600);
+        scene.getStylesheets().add(MainApplication.class.getResource("styles.css").toExternalForm());
         stage.setTitle("Gestión de Eventos y Navegación");
+        stage.setMinWidth(700);
+        stage.setMinHeight(500);
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 

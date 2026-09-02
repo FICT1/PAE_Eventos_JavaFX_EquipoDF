@@ -10,15 +10,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="12.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
+<VBox spacing="14.0" styleClass="modulo-container" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="ni.edu.uam.pae_eventos_javafx_equipodf.controller.CafeController">
     <padding>
-        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
     </padding>
     <children>
-        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Recepción de Café" />
+        <Label styleClass="modulo-titulo" text="Recepción de Café" />
 
-        <GridPane hgap="10.0" vgap="10.0">
+        <GridPane hgap="12.0" vgap="12.0" styleClass="form-card">
             <children>
                 <Label text="Código:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                 <TextField fx:id="txtCodigo" promptText="Código del lote" GridPane.columnIndex="1" GridPane.rowIndex="0" />
@@ -36,13 +36,13 @@
 
         <HBox alignment="CENTER_LEFT" spacing="15.0">
             <children>
-                <Button fx:id="btnGuardar" onAction="#guardarLote" style="-fx-background-color: #4e342e; -fx-text-fill: white;" text="Registrar Lote" />
-                <Button fx:id="btnDemostracion" onAction="#accionCargarDemostracion" text="Cargar Demostración" />
-                <Label fx:id="lblEstado" style="-fx-font-weight: bold;" text="Estado: Listo" />
+                <Button fx:id="btnGuardar" onAction="#guardarLote" styleClass="btn-primary" text="Registrar Lote" />
+                <Button fx:id="btnDemostracion" onAction="#accionCargarDemostracion" styleClass="btn-secondary" text="Cargar Demostración" />
+                <Label fx:id="lblEstado" styleClass="status-badge" text="Estado: Listo" />
             </children>
         </HBox>
 
-        <Label style="-fx-font-style: italic;" text="Doble clic en un lote para ver el detalle. Clic derecho para editar o eliminar." />
+        <Label styleClass="modulo-subtitulo" text="Doble clic en un lote para ver el detalle. Clic derecho para editar o eliminar." />
 
         <TableView fx:id="tablaLotes" VBox.vgrow="ALWAYS">
             <columns>
