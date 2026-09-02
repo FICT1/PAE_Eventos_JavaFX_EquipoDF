@@ -38,44 +38,40 @@ public class InventarioController {
 
     @FXML
     private void guardarProducto(ActionEvent event) {
-        String codigo = txtCodigo.getText().trim();
-        String nombre = txtNombre.getText().trim();
-        String precioText = txtPrecio.getText().trim();
-        String cantidadText = txtCantidad.getText().trim();
-
-        if (codigo.isEmpty() || nombre.isEmpty() || precioText.isEmpty() || cantidadText.isEmpty()) {
-            lblEstado.setText("Estado: Llene todos los campos.");
-            return;
-        }
-
         try {
-            double precio = Double.parseDouble(precioText);
-            int cantidad = Integer.parseInt(cantidadText);
+            String codigo = txtCodigo.getText().trim();
+            String nombre = txtNombre.getText().trim();
 
-            if (precio <= 0 || cantidad < 0) {
-                lblEstado.setText("Estado: Ingrese montos válidos.");
+            if (codigo.isEmpty() || nombre.isEmpty()) {
+                lblEstado.setText("Estado: Llene todos los campos requeridos.");
                 return;
             }
 
-            listaProductos.add(new Producto(codigo, nombre, precio, cantidad));
+            double precio = Double.parseDouble(txtPrecio.getText().trim());
+            int cantidad = Integer.parseInt(txtCantidad.getText().trim());
+
+            Producto p = new Producto(codigo, nombre, precio, cantidad);
+            listaProductos.add(p);
+
             lblEstado.setText("Estado: Producto guardado correctamente.");
             limpiarCampos();
+
         } catch (NumberFormatException e) {
-            lblEstado.setText("Estado: Precio y cantidad deben ser números.");
+            lblEstado.setText("Estado: Precio y cantidad deben ser numéricos.");
         }
     }
 
     @FXML
     private void buscarConEnter(KeyEvent event) {
         if (event.getCode() == KeyCode.ENTER) {
-            String codigoBusqueda = txtCodigo.getText().trim();
-            if (codigoBusqueda.isEmpty()) {
+            String codigo = txtCodigo.getText().trim();
+            if (codigo.isEmpty()) {
                 lblEstado.setText("Estado: Ingrese un código para buscar.");
                 return;
             }
 
             for (Producto p : listaProductos) {
-                if (p.getCodigo().equalsIgnoreCase(codigoBusqueda)) {
+                if (p.getCodigo().equalsIgnoreCase(codigo)) {
                     txtNombre.setText(p.getNombre());
                     txtPrecio.setText(String.valueOf(p.getPrecio()));
                     txtCantidad.setText(String.valueOf(p.getCantidad()));
@@ -83,7 +79,7 @@ public class InventarioController {
                     return;
                 }
             }
-            lblEstado.setText("Estado: Producto no existe.");
+            lblEstado.setText("Estado: No se encontró ningún producto con ese código.");
         }
     }
 
