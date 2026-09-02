@@ -15,6 +15,7 @@
 
         <Tab fx:id="tabCafe" text="Recepción Café">
             <content>
+                <fx:include source="CafeView.fxml" />
             </content>
         </Tab>
 
